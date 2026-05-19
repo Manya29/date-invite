@@ -1,73 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>A Little Question ❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date With Me ❤️</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 height:100vh;
 overflow:hidden;
-font-family:'Poppins',sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
-background:
-linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),
-url('https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=1974&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-position:relative;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb199,#ff0844);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
 }
 
-/* floating hearts */
-
-.heart{
-position:absolute;
-bottom:-50px;
-color:#ffd1dc;
-animation:float 8s linear infinite;
-opacity:0.7;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-@keyframes float{
-0%{
-transform:translateY(0) scale(0);
-opacity:0;
-}
-50%{
-opacity:1;
-}
-100%{
-transform:translateY(-120vh) scale(1.5);
-opacity:0;
-}
-}
-
-/* main card */
-
-.card{
-width:90%;
-max-width:700px;
-padding:50px;
-border-radius:35px;
-background:rgba(255,255,255,0.12);
-backdrop-filter:blur(18px);
-box-shadow:0 8px 40px rgba(0,0,0,0.3);
+.container{
 text-align:center;
-animation:fade 1.5s ease;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+width:90%;
+max-width:600px;
 position:relative;
 z-index:10;
+animation:fade 1.5s ease;
 }
 
 @keyframes fade{
@@ -81,198 +55,160 @@ transform:translateY(0);
 }
 }
 
-.small-text{
-font-family:'Great Vibes',cursive;
-font-size:60px;
-color:#fff;
+h1{
+font-size:3rem;
+color:white;
 margin-bottom:20px;
-}
-
-.main-text{
-font-size:55px;
-font-weight:600;
-color:white;
-line-height:1.2;
-}
-
-.highlight{
-font-family:'Great Vibes',cursive;
-font-size:75px;
-color:#ffd1dc;
-font-weight:normal;
-}
-
-.desc{
-margin-top:25px;
-font-size:18px;
-color:#f8f8f8;
-line-height:1.7;
-}
-
-/* buttons */
-
-.btns{
-margin-top:40px;
-position:relative;
-height:100px;
-}
-
-button{
-padding:16px 42px;
-border:none;
-border-radius:50px;
-font-size:20px;
-cursor:pointer;
-transition:0.3s;
-font-weight:600;
-}
-
-#yes{
-background:linear-gradient(45deg,#ff5c8a,#ff85a2);
-color:white;
-box-shadow:0 4px 15px rgba(255,92,138,0.4);
-}
-
-#yes:hover{
-transform:scale(1.08);
-}
-
-#no{
-background:white;
-color:#ff5c8a;
-position:absolute;
-margin-left:20px;
-}
-
-/* success message */
-
-.success{
-display:none;
-margin-top:35px;
-font-size:32px;
-color:white;
-animation:fade 1s ease;
-line-height:1.5;
-}
-
-/* bottom quote */
-
-.quote{
-position:absolute;
-bottom:25px;
-font-size:18px;
-color:white;
-opacity:0.9;
-font-style:italic;
-}
-
-/* music icon */
-
-.music{
-position:absolute;
-top:25px;
-right:25px;
-font-size:28px;
-color:white;
 animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
 0%{transform:scale(1);}
-50%{transform:scale(1.2);}
+50%{transform:scale(1.03);}
 100%{transform:scale(1);}
 }
 
+.typing{
+color:white;
+font-size:1.2rem;
+margin-bottom:30px;
+height:40px;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+#yes{
+background:white;
+color:#ff0844;
+font-weight:bold;
+}
+
+#yes:hover{
+transform:scale(1.1);
+}
+
+#no{
+background:#ff0844;
+color:white;
+position:absolute;
+}
+
+.final{
+display:none;
+margin-top:30px;
+font-size:2rem;
+color:white;
+animation:fade 1s ease;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 6s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) scale(1.5);
+opacity:0;
+}
+}
+
+.music{
+position:absolute;
+bottom:20px;
+right:20px;
+color:white;
+font-size:14px;
+opacity:0.7;
+}
 </style>
 </head>
 
 <body>
 
-<div class="music">🎵</div>
+<div class="container">
 
-<div class="card">
+<h1>Hey You ❤️</h1>
 
-<div class="small-text">
-A little question...
-</div>
+<div class="typing" id="typing"></div>
 
-<div class="main-text">
-Will you go on a
-<br>
-<span class="highlight">date with me?</span>
-</div>
+<button id="yes">YES 💖</button>
+<button id="no">NO 😅</button>
 
-<div class="desc">
-I promise cute memories, good laughs,
-coffee dates ☕ and lots of happiness 💕
-</div>
-
-<div class="btns">
-<button id="yes">Yes 💖</button>
-<button id="no">No 😅</button>
-</div>
-
-<div class="success" id="success">
-🌸 YAYYYYY 🌸
-<br>
-Best date ever loading...
+<div class="final" id="final">
+🌸 YAYYYYY 🌸<br><br>
+Now get ready for the cutest date ever 💕
 </div>
 
 </div>
 
-<div class="quote">
-“Sometimes the best things start with a simple yes.” ❤️
+<div class="music">
+🎵 Romantic mode activated
 </div>
 
 <script>
 
-/* floating hearts */
+const text = "I have something important to ask...";
+let i = 0;
 
-function createHeart(){
+function typeWriter(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,80);
+}
+}
 
-const heart = document.createElement("div");
+typeWriter();
+
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+const x = Math.random() * (window.innerWidth - 100);
+const y = Math.random() * (window.innerHeight - 100);
+
+noBtn.style.left = `${x}px`;
+noBtn.style.top = `${y}px`;
+});
+
+document.getElementById("yes").addEventListener("click", () => {
+
+document.getElementById("final").style.display = "block";
+
+for(let i=0;i<80;i++){
+
+let heart = document.createElement("div");
 heart.classList.add("heart");
-
-heart.innerHTML = "❤";
+heart.innerHTML = "❤️";
 
 heart.style.left = Math.random()*100 + "vw";
-heart.style.fontSize = (Math.random()*25 + 15) + "px";
-heart.style.animationDuration = (Math.random()*4 + 4) + "s";
+heart.style.animationDuration = (Math.random()*3+3) + "s";
+heart.style.fontSize = (Math.random()*30+15) + "px";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>{
 heart.remove();
-},8000);
-
+},6000);
 }
-
-setInterval(createHeart,300);
-
-/* running no button */
-
-const noBtn = document.getElementById("no");
-
-noBtn.addEventListener("mouseover",()=>{
-
-const x = Math.random() * (window.innerWidth - 120);
-const y = Math.random() * (window.innerHeight - 80);
-
-noBtn.style.left = `${x}px`;
-noBtn.style.top = `${y}px`;
-
-});
-
-/* yes button */
-
-document.getElementById("yes").addEventListener("click",()=>{
-
-document.getElementById("success").style.display = "block";
-
-for(let i=0;i<100;i++){
-createHeart();
-}
-
 });
 
 </script>
