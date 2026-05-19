@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Future Plans ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0f0f0f;
+overflow-x:hidden;
+color:white;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero h1{
+font-size:80px;
+font-family:'Great Vibes',cursive;
+animation:fade 2s ease;
+}
+
+.hero p{
+margin-top:20px;
+font-size:22px;
+opacity:0.9;
+animation:fade 3s ease;
+}
+
+.open-btn{
+margin-top:40px;
+padding:18px 45px;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff5f8f,#ff8fab);
+color:white;
+transition:0.3s;
+box-shadow:0 5px 20px rgba(255,95,143,0.5);
+}
+
+.open-btn:hover{
+transform:scale(1.08);
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+position:absolute;
+bottom:-50px;
+font-size:25px;
+animation:float 8s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* DATE CARDS */
+
+.section{
+padding:100px 10%;
+background:#121212;
+}
+
+.title{
+text-align:center;
+font-size:60px;
+margin-bottom:70px;
+font-family:'Great Vibes',cursive;
+color:#ffb3c6;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:30px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 10px 30px rgba(255,255,255,0.08);
+}
+
+.card h2{
+font-size:30px;
+margin-bottom:15px;
+color:#ff8fab;
+}
+
+.card p{
+line-height:1.8;
+opacity:0.9;
+}
+
+/* FINAL SECTION */
+
+.final{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+padding:20px;
+}
+
+.final h1{
+font-size:75px;
+font-family:'Great Vibes',cursive;
+margin-bottom:20px;
+}
+
+.final p{
+font-size:22px;
+max-width:700px;
+line-height:1.8;
+}
+
+.yes-btn{
+margin-top:40px;
+padding:18px 45px;
+border:none;
+border-radius:50px;
+font-size:22px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff5f8f,#ff8fab);
+color:white;
+transition:0.3s;
+}
+
+.yes-btn:hover{
+transform:scale(1.08);
+}
+
+.success{
+display:none;
+margin-top:40px;
+font-size:40px;
+animation:fade 1s ease;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:55px;
+}
+
+.title{
+font-size:45px;
+}
+
+.final h1{
+font-size:50px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Our Future Plans ❤️</h1>
+
+<p>
+I think we should make some beautiful memories together ✨
+</p>
+
+<button class="open-btn" onclick="scrollToPlans()">
+Open Our Plans 🌸
+</button>
+
+</section>
+
+<!-- PLANS -->
+
+<section class="section" id="plans">
+
+<h1 class="title">
+Future Date Ideas
+</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>☕ Coffee Date</h2>
+<p>
+Trying random cafés, rating desserts,
+and stealing sips from each other’s drinks 😭
+</p>
+</div>
+
+<div class="card">
+<h2>🎬 Movie Night</h2>
+<p>
+Pretending to watch the movie while talking
+through the whole thing together 💕
+</p>
+</div>
+
+<div class="card">
+<h2>🌧 Rain Walk</h2>
+<p>
+Sharing one umbrella dramatically
+like we’re in a Bollywood movie ✨
+</p>
+</div>
+
+<div class="card">
+<h2>🍜 Midnight Food Date</h2>
+<p>
+Ordering way too much food and saying
+“last bite” 17 times 😭
+</p>
+</div>
+
+<div class="card">
+<h2>✈️ Future Trip</h2>
+<p>
+Taking blurry aesthetic photos and getting lost together 🌸
+</p>
+</div>
+
+<div class="card">
+<h2>🛒 IKEA Date</h2>
+<p>
+Testing fake sofas like married people
+and judging home decor together 😂
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<h1>
+So... shall we make these memories real? ❤️
+</h1>
+
+<p>
+I think life would look prettier with you in all my future plans ✨
+</p>
+
+<button class="yes-btn" id="yesBtn">
+YES 💖
+</button>
+
+<div class="success" id="success">
+🌸 YAYYYYY 🌸
+<br>
+Future cutest couple unlocked 💕
+</div>
+
+</section>
+
+<script>
+
+/* scroll */
+
+function scrollToPlans(){
+document.getElementById("plans").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+/* floating hearts */
+
+function createHeart(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤";
+
+heart.style.left = Math.random()*100 + "vw";
+
+heart.style.animationDuration =
+(Math.random()*4 + 4) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,400);
+
+/* final button */
+
+document.getElementById("yesBtn")
+.addEventListener("click",()=>{
+
+document.getElementById("success")
+.style.display="block";
+
+for(let i=0;i<120;i++){
+createHeart();
+}
+
+});
+
+</script>
+
+</body>
+</html>
