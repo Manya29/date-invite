@@ -1,129 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Date Invite ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date With Me ❤️</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-    .container {
-      text-align: center;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      animation: pop 1s ease;
-    }
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ffb199,#ff0844);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+}
 
-    @keyframes pop {
-      from {
-        transform: scale(0.5);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: white;
-      margin-bottom: 20px;
-    }
+.container{
+text-align:center;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(15px);
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+width:90%;
+max-width:600px;
+position:relative;
+z-index:10;
+animation:fade 1.5s ease;
+}
 
-    .heart {
-      font-size: 60px;
-      animation: heartbeat 1s infinite;
-    }
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      25% { transform: scale(1.2); }
-      50% { transform: scale(1); }
-      75% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
+h1{
+font-size:3rem;
+color:white;
+margin-bottom:20px;
+animation:pulse 2s infinite;
+}
 
-    button {
-      padding: 12px 25px;
-      margin: 15px;
-      border: none;
-      border-radius: 50px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.03);}
+100%{transform:scale(1);}
+}
 
-    #yesBtn {
-      background: #ff4b5c;
-      color: white;
-    }
+.typing{
+color:white;
+font-size:1.2rem;
+margin-bottom:30px;
+height:40px;
+}
 
-    #yesBtn:hover {
-      transform: scale(1.1);
-    }
+button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+font-size:20px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
 
-    #noBtn {
-      background: white;
-      color: #ff4b5c;
-      position: absolute;
-    }
+#yes{
+background:white;
+color:#ff0844;
+font-weight:bold;
+}
 
-    .message {
-      color: white;
-      font-size: 2rem;
-      margin-top: 20px;
-      display: none;
-    }
+#yes:hover{
+transform:scale(1.1);
+}
 
-  </style>
+#no{
+background:#ff0844;
+color:white;
+position:absolute;
+}
+
+.final{
+display:none;
+margin-top:30px;
+font-size:2rem;
+color:white;
+animation:fade 1s ease;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 6s linear infinite;
+opacity:0.7;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-10vh) scale(1.5);
+opacity:0;
+}
+}
+
+.music{
+position:absolute;
+bottom:20px;
+right:20px;
+color:white;
+font-size:14px;
+opacity:0.7;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <div class="heart">❤️</div>
+<div class="container">
 
-    <h1>Will you go on a date with me?</h1>
+<h1>Hey You ❤️</h1>
 
-    <button id="yesBtn">Yes 💖</button>
-    <button id="noBtn">No 😅</button>
+<div class="typing" id="typing"></div>
 
-    <div class="message" id="message">
-      Yayyyyy!! 🎉💞  
-      Best date ever loading...
-    </div>
-  </div>
+<button id="yes">YES 💖</button>
+<button id="no">NO 😅</button>
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const message = document.getElementById("message");
+<div class="final" id="final">
+🌸 YAYYYYY 🌸<br><br>
+Now get ready for the cutest date ever 💕
+</div>
 
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
+</div>
 
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    });
+<div class="music">
+🎵 Romantic mode activated
+</div>
 
-    yesBtn.addEventListener("click", () => {
-      message.style.display = "block";
-    });
-  </script>
+<script>
+
+const text = "I have something important to ask...";
+let i = 0;
+
+function typeWriter(){
+if(i < text.length){
+document.getElementById("typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,80);
+}
+}
+
+typeWriter();
+
+const noBtn = document.getElementById("no");
+
+noBtn.addEventListener("mouseover", () => {
+const x = Math.random() * (window.innerWidth - 100);
+const y = Math.random() * (window.innerHeight - 100);
+
+noBtn.style.left = `${x}px`;
+noBtn.style.top = `${y}px`;
+});
+
+document.getElementById("yes").addEventListener("click", () => {
+
+document.getElementById("final").style.display = "block";
+
+for(let i=0;i<80;i++){
+
+let heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML = "❤️";
+
+heart.style.left = Math.random()*100 + "vw";
+heart.style.animationDuration = (Math.random()*3+3) + "s";
+heart.style.fontSize = (Math.random()*30+15) + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+}
+});
+
+</script>
 
 </body>
 </html>
